@@ -8,7 +8,7 @@ TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
 
 def start(bot, update):
-	bot.sendMessage(chat_id=update.message.chat_id, text=("Hi %s. Send me /quote command to get a random quote from "
+	bot.sendMessage(chat_id=update.message.chat_id, text=("привет %s. Набирай /foilar и лови мудрость!"
 														  "me!" %
 														  update.message.from_user.name))
 
