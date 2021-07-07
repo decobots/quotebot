@@ -37,7 +37,7 @@ def main():
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
 	'credentials.json',
 	scopes=SCOPES)
-
+	flow.redirect_uri = 'http://localhost:35655/'
 
 	
 	
