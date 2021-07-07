@@ -1,1 +1,1 @@
-runner: telegram-bot main.py
+runner: telegram-bot.py
