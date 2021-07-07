@@ -25,17 +25,20 @@ def main():
 	dp.add_handler(CommandHandler("start", start))
 	dp.add_handler(CommandHandler("foilar", quote))
 
-	# Start the bot
-	updater.start_polling()
+	
 	
 
+
+	updater.start_webhook(listen="0.0.0.0",port=int(PORT),url_path=TOKEN)
+	updater.bot.setWebhook('https://testforf.herokuapp.com/' + TOKEN)
+	
+	# Start the bot
+	updater.start_polling()	
 	print("================================")
 	print("========= Bot Running ==========")
 	print("================================")
 	# Start the Bot
 	
-	updater.start_webhook(listen="0.0.0.0",port=int(PORT),url_path=TOKEN)
-	updater.bot.setWebhook('https://testforf.herokuapp.com/' + TOKEN)
 	updater.idle()
 
 
