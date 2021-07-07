@@ -1,6 +1,6 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
-from src.environment_variables import get_env
+from environment_variables import get_env
 
 # Your bot token (from BotFather)
 TOKEN = get_env("ACCESS_TOKEN")
