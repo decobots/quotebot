@@ -1,23 +1,42 @@
-# Telegram Quote Bot
-A Telegram bot that will send you a random quote. 
-My original post about this Telegram bot in Medium: https://chatbotslife.com/making-your-bot-talks-2e3ba1900971
+# Foilar Bot
+Бот для отправки цитат.
+Оригинал взят с https://github.com/dkhd/quotebot
+Задеплоен на Heroku
 
-Usage:
+Редактирование текстов:
 
-1. Install the package needed.
 
-```
-$ pip install -r requirements.txt
-```
+1. Кликнуть по ссылке quotes.txt.
+  ```
+  ![изображение](https://user-images.githubusercontent.com/5717390/124798099-a947b900-df5b-11eb-8bab-fe05d6e4c676.png)
+  ```
 
-2. Create your own Telegram bot as [described here](https://chatbotslife.com/your-first-telegram-bot-47ea6034d311) and put the generated token in ` telegram-bot.py ` file.
 
-3. Run the `telegram-bot.py` using this command.
-```
-$ python telegram-bot.py
-```
+2. Войти в режим редактирования.
+  ```
+  ![изображение](https://user-images.githubusercontent.com/5717390/124798483-12c7c780-df5c-11eb-85cd-331c98aba927.png)
+  ```
 
-4. Have fun!
 
-----
-_Disclaimer: I did not create the quotes myself, the quotes are taken from [textfiles.com](http://www.textfiles.com/humor/TAGLINES/quotes.frt)_
+3. Можно редактировать текст.
+   — в сообщении не должно быть переносов строки (хоть линия 22 и выглядит как две строчки, на самом деле она одна - у нее одна цифра.) в общем enter не нажимать главное.
+   — не должно быть пустых строк (особенно следи за последней)
+  ```
+  ![изображение](https://user-images.githubusercontent.com/5717390/124798723-5d494400-df5c-11eb-85d1-fbfaffe5e072.png)
+  ```
+
+
+4. Пишешь сообшение что поправила, что б потом на забыть. Это не очень важное сообшение.
+  Затем нажимаешь кнопку commit changes.
+  ```
+  ![изображение](https://user-images.githubusercontent.com/5717390/124799325-19a30a00-df5d-11eb-8114-35c15f1ae5c1.png)
+  ```
+
+
+5. Страница обновляется, текст снова залочен. 
+   Проверяешь что текст обновлен.
+   
+   
+6. Через пару минут текст обновится в боте, но ты об этом не узнаешь. Если очень нужно проверить что все обновилось - обращайся к Мии
+  
+  
