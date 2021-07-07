@@ -38,7 +38,7 @@ def quote(bot, update):
 def main():
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('credentials.json', scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	flow.fetch_token(authorization_response='200')
+	flow.fetch_token(authorization_response='https://testforf.herokuapp.com/')
 
 
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
