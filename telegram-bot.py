@@ -40,12 +40,11 @@ def main():
 	'credentials.json',
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	
-	credentials = run_flow(flow, storage)
+
 
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
-	with build('documentai', 'v1', credentials=credentials) as service:
+	with build('documentai', 'v1', credentials=flow.credentials) as service:
 		doc = service.documents.get(DOCUMENT_ID).execute()
 		
 		
