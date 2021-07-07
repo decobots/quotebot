@@ -52,8 +52,7 @@ def main():
 	# Start the bot
 	updater.start_polling()
 	
-	file7 = drive.CreateFile({'id': GOOGLE_ID})
-	content = file7.GetContentString()
+
 	print(content)
 	print("================================")
 	print("========= Bot Running ==========")
