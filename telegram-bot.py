@@ -1,8 +1,9 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
+from src.environment_variables import get_env
 
 # Your bot token (from BotFather)
-token = "YOUR TOKEN HERE"
+token = get_env("ACCESS_TOKEN")
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=("Hi %s. Send me /quote command to get a random quote from "
