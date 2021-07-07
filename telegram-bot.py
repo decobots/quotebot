@@ -3,7 +3,7 @@ from engine import get_random_quote
 from src.environment_variables import get_env
 
 # Your bot token (from BotFather)
-token = get_env("ACCESS_TOKEN")
+TOKEN = get_env("ACCESS_TOKEN")
 PORT = get_env('PORT')
 
 def start(bot, update):
@@ -16,7 +16,7 @@ def quote(bot, update):
 					text=get_random_quote())
 
 def main():
-	updater = Updater(token);
+	updater = Updater(TOKEN);
 	dp = updater.dispatcher
 
 	# Define all the commands that the bot will receive
@@ -28,10 +28,10 @@ def main():
 	print("================================")
 	print("========= Bot Running ==========")
 	print("================================")
-# Start the Bot
-
-    	updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=token)
-    	updater.bot.setWebhook('https://testforf.herokuapp.com/' + token)
+	# Start the Bot
+	
+	updater.start_webhook(listen="0.0.0.0",port=int(PORT),url_path=TOKEN)
+	updater.bot.setWebhook('https://testforf.herokuapp.com/' + TOKEN)
 	updater.idle()
 
 
