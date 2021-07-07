@@ -1,10 +1,7 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
 import os
-from pydrive2.auth import GoogleAuth
 
-gauth = GoogleAuth()
-gauth.LocalWebserverAuth() 
 
 # Your bot token (from BotFather)
 TOKEN = os.environ.get("ACCESS_TOKEN")
