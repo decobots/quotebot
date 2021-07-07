@@ -20,7 +20,7 @@ def main():
 
 	# Define all the commands that the bot will receive
 	dp.add_handler(CommandHandler("start", start))
-	dp.add_handler(CommandHandler("quote", quote))
+	dp.add_handler(CommandHandler("foilar", quote))
 
 	# Start the bot
 	updater.start_polling()
