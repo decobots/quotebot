@@ -48,8 +48,8 @@ def main():
 	print(flow)
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
-	with build('documentai', 'v1', credentials=flow.credentials) as service:
-		doc = service.documents.get(DOCUMENT_ID).execute()
+#	with build('documentai', 'v1', credentials=flow.credentials) as service:
+#		doc = service.documents.get(DOCUMENT_ID).execute()
 		
 		
 	
