@@ -53,7 +53,6 @@ def main():
 	updater.start_polling()
 	
 
-	print(content)
 	print("================================")
 	print("========= Bot Running ==========")
 	print("================================")
