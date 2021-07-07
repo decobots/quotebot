@@ -41,7 +41,7 @@ def main():
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
 	
-	credentials = run_flow(FLOW, storage)
+	credentials = run_flow(flow, storage)
 
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
