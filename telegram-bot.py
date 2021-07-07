@@ -4,7 +4,7 @@ from src.environment_variables import get_env
 
 # Your bot token (from BotFather)
 token = get_env("ACCESS_TOKEN")
-PORT = get_env('PORT', 5000)
+PORT = get_env('PORT')
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=("Hi %s. Send me /quote command to get a random quote from "
