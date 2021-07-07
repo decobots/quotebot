@@ -1,11 +1,16 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
 import os
+from pydrive2.auth import GoogleAuth
+
+gauth = GoogleAuth()
+gauth.LocalWebserverAuth() 
 
 # Your bot token (from BotFather)
-
 TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
+GOOGLE_ID = os.environ.get("GOOGLE_ID")
+
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=("привет %s. Набирай /foilar и лови мудрость!"
@@ -26,6 +31,10 @@ def main():
 
 	# Start the bot
 	updater.start_polling()
+	
+	file7 = drive.CreateFile({'id': GOOGLE_ID})
+	content = file7.GetContentString()
+	print(content)
 	print("================================")
 	print("========= Bot Running ==========")
 	print("================================")
