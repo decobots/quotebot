@@ -45,9 +45,7 @@ def main():
 
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
-	http = httplib2.Http()
-	http = credentials.authorize(http)
-	with build('documentai', 'v1', http) as service:
+	with build('documentai', 'v1', credentials=credentials) as service:
 		doc = service.documents.get(DOCUMENT_ID).execute()
 		
 		
