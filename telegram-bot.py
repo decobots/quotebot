@@ -13,6 +13,8 @@ from googleapiclient.discovery import build
 # Your bot token (from BotFather)
 TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
+GOOGLE_AUTORISATION_TOKEN = os.environ.get("GOOGLE_AUTORISATION_TOKEN")
+
 
 
 # If modifying these scopes, delete the file token.json.
@@ -38,7 +40,7 @@ def quote(bot, update):
 def main():
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('credentials.json', scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	flow.fetch_token(authorization_response='https://testforf.herokuapp.com/')
+	flow.fetch_token(code=GOOGLE_AUTORISATION_TOKEN)
 
 
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
