@@ -38,11 +38,14 @@ def quote(bot, update):
 					text=get_random_quote())
 
 def main():
-	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('credentials.json', scopes=SCOPES)
+	#flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('credentials.json', scopes=SCOPES)
+	#flow.redirect_uri = 'http://localhost:35655/'
+	#flow.fetch_token(code=GOOGLE_AUTORISATION_TOKEN)
+	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+	'credentials.json',
+	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	flow.fetch_token(code=GOOGLE_AUTORISATION_TOKEN)
-
-
+	print(flow)
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
 	with build('documentai', 'v1', credentials=flow.credentials) as service:
