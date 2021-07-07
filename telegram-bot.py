@@ -1,5 +1,6 @@
 import google.oauth2.credentials
 import google_auth_oauthlib.flow
+from oauth2client.tools import run_flow
 
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
@@ -39,13 +40,16 @@ def main():
 	'credentials.json',
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	with build('documentai', 'v1') as service:
-		collection = service.stamps()
-		request = collection.get(DOCUMENT_ID)
-		try:
-		    response = request.execute()
-		except HttpError as e:
-		    print('Error response status code : {0}, reason : {1}'.format(e.status_code, e.error_details))
+	
+	credentials = run_flow(FLOW, storage)
+
+	# Create an httplib2.Http object to handle our HTTP requests and authorize it
+	# with our good Credentials.
+	http = httplib2.Http()
+	http = credentials.authorize(http)
+	with build('documentai', 'v1', http) as service:
+		doc = service.documents.get(DOCUMENT_ID).execute()
+		
 		
 	
 	
