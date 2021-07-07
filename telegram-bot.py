@@ -45,6 +45,8 @@ def main():
 	'credentials.json',
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
+	code = input('Enter the authorization code: ')
+	flow.fetch_token(code=code)
 	print(flow)
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
