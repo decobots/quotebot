@@ -46,12 +46,13 @@ def main():
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
 	code = input('Enter the authorization code: ')
-	flow.fetch_token(code=code)
+	creds = flow.run_local_server(port=0)
+
 	print(flow)
 	# Create an httplib2.Http object to handle our HTTP requests and authorize it
 	# with our good Credentials.
-#	with build('documentai', 'v1', credentials=flow.credentials) as service:
-#		doc = service.documents.get(DOCUMENT_ID).execute()
+	with build('documentai', 'v1', creds) as service:
+		doc = service.documents.get(DOCUMENT_ID).execute()
 		
 		
 	
