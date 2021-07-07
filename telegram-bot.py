@@ -57,12 +57,12 @@ def main():
 		with open('token.json', 'w') as token:
 		    token.write(creds.to_json())
 
-	    service = build('docs', 'v1', credentials=creds)
+	service = build('docs', 'v1', credentials=creds)
 
-	    # Retrieve the documents contents from the Docs service.
-	    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+	# Retrieve the documents contents from the Docs service.
+	document = service.documents().get(documentId=DOCUMENT_ID).execute()
 
-	    print('The title of the document is: {}'.format(document.get('title')))
+	print('The title of the document is: {}'.format(document.get('title')))
 
 	
 	
