@@ -5,6 +5,7 @@ from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
 import os
 
+from googleapiclient.discovery import build
 
 
 
@@ -38,7 +39,14 @@ def main():
 	'credentials.json',
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-
+	with build('documentai', 'v1') as service:
+		collection = service.stamps()
+		request = collection.get(DOCUMENT_ID)
+		try:
+		    response = request.execute()
+		except HttpError as e:
+		    print('Error response status code : {0}, reason : {1}'.format(e.status_code, e.error_details))
+		
 	
 	
 	
