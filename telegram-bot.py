@@ -45,7 +45,6 @@ def main():
 	'credentials.json',
 	scopes=SCOPES)
 	flow.redirect_uri = 'http://localhost:35655/'
-	code = input('Enter the authorization code: ')
 	creds = flow.run_local_server(port=0)
 
 	print(flow)
