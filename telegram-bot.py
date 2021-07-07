@@ -1,10 +1,11 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
-from environment_variables import get_env
+import os
 
 # Your bot token (from BotFather)
-TOKEN = get_env("ACCESS_TOKEN")
-PORT = get_env('PORT')
+
+TOKEN = os.environ.get("ACCESS_TOKEN")
+PORT = int(os.environ.get('PORT', 5000))
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=("Hi %s. Send me /quote command to get a random quote from "
