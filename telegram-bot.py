@@ -12,7 +12,7 @@ PORT = int(os.environ.get('PORT', 5000))
 
 
 def start(bot, update):
-	bot.sendMessage(chat_id=update.message.chat_id, text=("привет %s. Набирай /foilar и лови мудрость!" "me!" % update.message.from_user.name))
+	bot.sendMessage(chat_id=update.message.chat_id, text=("Привет %s! Что сегодня тебе скажет Фойлар? Набирай /foilar" % update.message.from_user.name))
 
 def quote(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=get_random_quote())
