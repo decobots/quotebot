@@ -20,6 +20,7 @@ def get_lines():
 		return lines
 
 def get_random_quote():
+	print(random.choice(LINES))
 	return random.choice(LINES)
 
 def start(bot, update):
@@ -29,7 +30,7 @@ def quote(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=get_random_quote())
 
 def main():
-	LINES = get_lines()
+	global LINES = get_lines()
 	updater = Updater(TOKEN);
 	dp = updater.dispatcher
 
