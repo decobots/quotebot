@@ -23,7 +23,7 @@ def get_random_quote():
 
 def get_lines():
 	with open(quote_file) as file:
-        	lines = [line for line in file.readlines() if line]
+		lines = [line for line in file.readlines() if line]
 		return lines
 	
 def main():
