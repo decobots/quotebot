@@ -1,6 +1,5 @@
 
 from telegram.ext import Updater, CommandHandler
-from engine import get_random_quote
 import os
 import random
 
