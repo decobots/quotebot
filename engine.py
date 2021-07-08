@@ -3,12 +3,11 @@ from random import randint
 quote_file = "quotes.txt"
 
 def get_random_quote():
-    start_line  = None
-    end_line    = None
-
+    print('getlines')
     # Open the quote file
     with open(quote_file) as file:
         lines = (line for line in file.readlines() if line)
+        print(lines)
     print(random.choice(lines))
     return random.choice(lines)
         #line = file.readlines()
