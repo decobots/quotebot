@@ -2,12 +2,15 @@
 from telegram.ext import Updater, CommandHandler
 from engine import get_random_quote
 import os
+import random
+
+quote_file = "quotes.txt"
 
 
 # Your bot token (from BotFather)
 TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
-
+LINES = []
 
 
 def start(bot, update):
@@ -16,7 +19,18 @@ def start(bot, update):
 def quote(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=get_random_quote())
 
+def get_random_quote():
+	return random.choice(LINES)
+
+def get_lines():
+	with open(quote_file) as file:
+        	lines = [line for line in file.readlines() if line]
+		return lines
+	
 def main():
+	global LINES
+	LINES = get(lines)
+	
 	updater = Updater(TOKEN);
 	dp = updater.dispatcher
 
