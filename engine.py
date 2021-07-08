@@ -1,15 +1,22 @@
-from random import randint
+import random
 
 quote_file = "quotes.txt"
 
 def get_random_quote():
-    start_line  = None
-    end_line    = None
+    with open(quote_file) as file:
+        lines = (line for line in file.readlines() if line)
+        return random.choice(lines)
+
+
+
+#def get_random_quote():
+#    start_line  = None
+#    end_line    = None
 
     # Open the quote file
-    with open(quote_file) as file:
-        line = file.readlines()
-        random_line = (randint(0, len(line)-1))
+##    with open(quote_file) as file:
+#        line = file.readlines()
+ #       random_line = (randint(0, len(line)-1))
 
     # Let's begin with some random line number
     # When '%%' is found, save the line number and break the loop
@@ -30,5 +37,5 @@ def get_random_quote():
 
     # Join all the text between these two '%%'
    #  quote = "".join(line[start_line:end_line])
-   # print(line[random_line])
-    return line[random_line]
+
+ #   return line[random_line]
