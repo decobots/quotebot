@@ -1,4 +1,4 @@
-from random import randint
+import random
 
 quote_file = "quotes.txt"
 
@@ -7,7 +7,7 @@ def get_random_quote():
     # Open the quote file
     with open(quote_file) as file:
         lines = [line for line in file.readlines() if line]
-        print(lines)
+        print(random.choice(lines))
         print(type(random.choice(lines)))
         return random.choice(lines)
         #line = file.readlines()
