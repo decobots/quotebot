@@ -19,6 +19,7 @@ def get_lines():
 		return lines
 
 def get_random_quote():
+	print(LINES)
 	return random.choice(LINES)
 
 def start(bot, update):
