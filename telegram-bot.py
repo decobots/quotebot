@@ -31,6 +31,8 @@ def quote(bot, update):
 
 def main():
 	global LINES = get_lines()
+	LINES = get_lines()
+	
 	updater = Updater(TOKEN);
 	dp = updater.dispatcher
 
