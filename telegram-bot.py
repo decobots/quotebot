@@ -11,13 +11,12 @@ quote_file = "quotes.txt"
 # Your bot token (from BotFather)
 TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
-LINES = []
+LINES = null
 
 def get_lines():
 	print('getlines')
 	with open(quote_file) as file:
 		lines = (line for line in file.readlines() if line)
-		print(lines)
 		return lines
 
 def get_random_quote():
