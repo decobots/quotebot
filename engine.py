@@ -6,7 +6,7 @@ def get_random_quote():
     print('getlines')
     # Open the quote file
     with open(quote_file) as file:
-        lines = (line for line in file.readlines() if line)
+        lines = [line for line in file.readlines() if line]
         print(lines)
         print(type(random.choice(lines)))
         return random.choice(lines)
