@@ -28,7 +28,7 @@ def get_lines():
 	
 def main():
 	global LINES
-	LINES = get_lines(lines)
+	LINES = get_lines()
 	
 	updater = Updater(TOKEN);
 	dp = updater.dispatcher
