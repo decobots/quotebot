@@ -1,27 +1,14 @@
 
-
 from telegram.ext import Updater, CommandHandler
+from engine import get_random_quote
 import os
-import random
-
-quote_file = "quotes.txt"
-
 
 
 # Your bot token (from BotFather)
 TOKEN = os.environ.get("ACCESS_TOKEN")
 PORT = int(os.environ.get('PORT', 5000))
-LINES = None
 
-def get_lines():
-	print('getlines')
-	with open(quote_file) as file:
-		lines = (line for line in file.readlines() if line)
-		return lines
 
-def get_random_quote():
-	print(random.choice(LINES))
-	return random.choice(LINES)
 
 def start(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=("Привет %s! Что сегодня тебе скажет Фойлар? Набирай /foilar" % update.message.from_user.name))
@@ -30,9 +17,6 @@ def quote(bot, update):
 	bot.sendMessage(chat_id=update.message.chat_id, text=get_random_quote())
 
 def main():
-	global LINES
-	LINES = get_lines()
-	
 	updater = Updater(TOKEN);
 	dp = updater.dispatcher
 
